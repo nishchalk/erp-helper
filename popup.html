@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            max-width: 220px;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+        input, textarea {
+            width: 220px;
+        }
+        input#save {
+            font-weight: bold; width: auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="erpCredentials">
+        <p>
+            <label for="roll_no">Roll No.</label><br />
+            <input type="text" id="roll_no" name="roll_no" size="50" value="" />
+        </p>
+        <p>
+            <label for="pwd">Password</label><br />
+            <input type="text" id="pwd" name="pwd" size="50" value="" />
+        </p>
+
+        <!-- Security Question 1 -->
+        <p>
+            <label for="ques1">Question 1</label><br />
+            <input type="text" id="ques1" name="ques1" size="50" value="" />
+        </p>
+        <p>
+            <label for="ans1">Answer 1</label><br />
+            <input type="text" id="ans1" name="ans1" size="50" value="" />
+        </p>
+
+        <!-- Security Question 2 -->
+        <p>
+            <label for="ques2">Question 2</label><br />
+            <input type="text" id="ques2" name="ques2" size="50" value="" />
+        </p>
+        <p>
+            <label for="ans2">Answer 2</label><br />
+            <input type="text" id="ans2" name="ans2" size="50" value="" />
+        </p>
+
+        <!-- Security Question 3 -->
+        <p>
+            <label for="ques3">Question 3</label><br />
+            <input type="text" id="ques3" name="ques3" size="50" value="" />
+        </p>
+        <p>
+            <label for="ans3">Answer 3</label><br />
+            <input type="text" id="ans3" name="ans3" size="50" value="" />
+        </p>
+
+        <p>
+            <input id="save" type="button" value="Save erpCredentials" />
+            <div id="status-display" style="display: none;">Credentials Saved</div>
+        </p>
+    </form>
+</body>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="exec.js"></script>
+</html>

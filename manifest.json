@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "IIT KGP ERP Helper",
+  "description": "Since google autofill is not developed yet, this extension will help you login into ERP quickly.",
+  "version": "1.0",
+  "icons":{ "128": "iitkgp_128.png"},
+  "browser_action":{
+    "default_icon": "iitkgp.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [ {
+    "matches": ["*://erp.iitkgp.ac.in/*/login.htm*", "*://erp.iitkgp.ac.in/*/auth.htm*"],
+    "js": ["jquery.min.js","content.js"]
+  } ],
+  "permissions": [
+     "activeTab",
+     "tabs",
+     "storage"
+   ]
+}
