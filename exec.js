@@ -1,34 +1,53 @@
 $(document).ready(function(){
-	chrome.storage.sync.get(function(json) {
-	  console.log(json);
-	  for(var key in json){
-	  	$('#'+key).val(json[key]);
-	  	// console.log(key);
-	  	// console.log(json[key]);
-	  }
+	chrome.storage.sync.get(function(json) {	  
+  	for(var key in json){
+  		$('#'+key).val(json[key]);
+  	  console.log("Key: " + key + "\nValue: " + json[key]);      	
+      }
 	  // chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
 	  //     chrome.tabs.sendMessage(tabs[0].id, {action: "open_dialog_box", data: json}, function(response) {});  
-	  // });
-	  $('#user_id').val(json['roll_no']);
-	  $('#password').val(json['pwd']);
-	  $('#user_id').select();
-	  $('#password').select();
+	  // });	  
 	});
-	
-	// Roll number goes here
-	var Roll_No = $('#roll_no').val();
-	// Pasword
-	var Password = $('#pwd').val();
 
-	// Specify all the questions and answers as it is considering Uppercase and Lowercase
-	var ques1 = $('#ques1').val();
-	var ans1 = $('#ans1').val();
+	var nrPost = 3;
 
-	var ques2 = $('#ques2').val();
-	var ans2 = $('#ans2').val();
+	var getQuestion = function ()
+    {
+        // $.ajaxSetup({async:false});
+        var url = "https://erp.iitkgp.ac.in/SSOAdministration/getSecurityQues.htm";
+        var data = { user_id: $('#roll_no').val() };
+        $.post(url, data, Callback);
+    };
 
-	var ques3 = $('#ques3').val();
-	var ans3 = $('#ans3').val();
+    var Callback = function (response)
+    {
+        $('#ques'+nrPost).val(response);
+        console.log(nrPost);
+        console.log($('#ques'+(nrPost+2)).val());
+        console.log($('#ques'+(nrPost+1)).val());
+        console.log($('#ques'+nrPost).val());
+
+        if($('#ques'+nrPost).val() == $('#ques'+(nrPost+1)).val() || $('#ques'+nrPost).val() == $('#ques'+(nrPost+2)).val()){
+        	getQuestion();
+        	return;
+        }
+        if (response.error)
+        {
+            return;
+        }
+
+        nrPost--;
+
+        if(nrPost>0)
+            getQuestion();
+        else
+            return;
+    };
+
+	$("#roll_no").change(function(){
+		getQuestion();
+		nrPost = 3;
+	});
 
 	$("#save").click(function(){
 		json = ConvertFormToJSON($('#erpCredentials'))
@@ -39,23 +58,6 @@ $(document).ready(function(){
 	    $('#status-display').show();
 	});
 
-	//******************************************************************//
-
-	// setTimeout(function() {
-	//     if($('#question').text()==qt1){
-	//     	$('#answer').val(ans1);
-	//     }
-	//     else if($('#question').text()==qt2){
-	//     	$('#answer').val(ans2);
-	//     }
-	//     else if($('#question').text()==qt3){
-	//     	$('#answer').val(ans3);
-	//     }
-	//     else{
-	//     	alert('Please reload this page !!');
-	//     }
-	//     $('input[type=submit]').click();
- // 	 }, 500);
 });
 function ConvertFormToJSON(form){
     var array = jQuery(form).serializeArray();

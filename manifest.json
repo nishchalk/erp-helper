@@ -11,6 +11,9 @@
   "content_scripts": [ {
     "matches": ["*://erp.iitkgp.ac.in/*/login.htm*", "*://erp.iitkgp.ac.in/*/auth.htm*"],
     "js": ["jquery.min.js","content.js"]
+  },{
+    "matches": ["*://erp.iitkgp.ac.in/*/home.htm*", "*://erp.iitkgp.ac.in/IIT_ERP3/*"],
+    "js": ["jquery.min.js","content2.js"]
   } ],
   "permissions": [
      "activeTab",

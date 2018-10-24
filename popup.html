@@ -14,6 +14,38 @@
         input#save {
             font-weight: bold; width: auto;
         }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 1.2px 2.0px;
+            margin: 4px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=button] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=button]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        
     </style>
 </head>
 <body>
@@ -24,7 +56,7 @@
         </p>
         <p>
             <label for="pwd">Password</label><br />
-            <input type="text" id="pwd" name="pwd" size="50" value="" />
+            <input type="password" id="pwd" name="pwd" size="50" value="" />
         </p>
 
         <!-- Security Question 1 -->
@@ -34,7 +66,7 @@
         </p>
         <p>
             <label for="ans1">Answer 1</label><br />
-            <input type="text" id="ans1" name="ans1" size="50" value="" />
+            <input type="password" id="ans1" name="ans1" size="50" value="" />
         </p>
 
         <!-- Security Question 2 -->
@@ -44,7 +76,7 @@
         </p>
         <p>
             <label for="ans2">Answer 2</label><br />
-            <input type="text" id="ans2" name="ans2" size="50" value="" />
+            <input type="password" id="ans2" name="ans2" size="50" value="" />
         </p>
 
         <!-- Security Question 3 -->
@@ -54,7 +86,7 @@
         </p>
         <p>
             <label for="ans3">Answer 3</label><br />
-            <input type="text" id="ans3" name="ans3" size="50" value="" />
+            <input type="password" id="ans3" name="ans3" size="50" value="" />
         </p>
 
         <p>

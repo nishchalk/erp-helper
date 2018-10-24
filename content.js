@@ -25,13 +25,13 @@ $(document).ready(function(){
 		$('#password').select();
 
 		setTimeout(function() {
-		    if($('#question').text()==qt1){
+		    if($('#question').text().toLowerCase()==qt1.toLowerCase()){
 		    	$('#answer').val(ans1);
 		    }
-		    else if($('#question').text()==qt2){
+		    else if($('#question').text().toLowerCase()==qt2.toLowerCase()){
 		    	$('#answer').val(ans2);
 		    }
-		    else if($('#question').text()==qt3){
+		    else if($('#question').text().toLowerCase()==qt3.toLowerCase()){
 		    	$('#answer').val(ans3);
 		    }
 		    else{
