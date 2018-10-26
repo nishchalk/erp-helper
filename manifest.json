@@ -13,7 +13,13 @@
     "js": ["jquery.min.js","content.js"]
   },{
     "matches": ["*://erp.iitkgp.ac.in/*/home.htm*", "*://erp.iitkgp.ac.in/IIT_ERP3/*"],
-    "js": ["jquery.min.js","content2.js"]
+    "js": ["jquery.min.js","home-content.js"]
+  },{
+    "matches": ["https://erp.iitkgp.ac.in/*/logoutmsg.htm"],
+    "js": ["timed_out.js"]
+  },{
+    "matches": ["https://erp.iitkgp.ac.in/IIT_ERP3/*"],
+    "js": ["skip-form.js"]
   } ],
   "permissions": [
      "activeTab",
