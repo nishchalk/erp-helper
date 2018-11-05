@@ -18,8 +18,8 @@
     "matches": ["https://erp.iitkgp.ac.in/*/logoutmsg.htm"],
     "js": ["timed_out.js"]
   },{
-    "matches": ["https://erp.iitkgp.ac.in/IIT_ERP3/*"],
-    "js": ["skip-form.js"]
+    "matches": ["https://erp.iitkgp.ac.in/*/feedback*"],
+    "js": ["jquery.min.js","feedback.js"]
   } ],
   "permissions": [
      "activeTab",
